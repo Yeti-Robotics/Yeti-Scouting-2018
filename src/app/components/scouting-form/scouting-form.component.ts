@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { query } from "@angular/core/src/animation/dsl";
 
 @Component({
     templateUrl: './scouting-form.component.html',
@@ -6,4 +7,12 @@ import { Component } from "@angular/core";
 })
 export class ScoutingFormComponent {
 
+    var1 = document.querySelectorAll("#autoCheckBox");
+    var2 = document.querySelectorAll(".autoItem");
+
 }
+
+
+
+
+

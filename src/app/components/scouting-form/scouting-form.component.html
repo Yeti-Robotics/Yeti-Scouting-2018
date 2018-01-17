@@ -1,1 +1,149 @@
-<h1>Scouting Form</h1>
+<!DOCTYPE html>
+<!-- Basic information panel: -->
+<div class="panel panel-default margins ">
+    <div class="panel-heading ">
+        <h3 class="panel-title ">Basic Info:</h3>
+    </div>
+    <div class="panel-body margins">
+        <form>
+            <div class="form-group margins">
+                <label for="souterName">What is Your Name?
+                    <input type="checkbox"> Remember me
+                </label>
+                <input type="text" class="form-control" id="scouterName" placeholder="Enter First and Last Name">
+            </div>
+            <div class="form-group margins">
+                <label for="teamNumber">What Team are you Scouting?</label>
+                <input type="text" class="form-control" id="teamNumber" placeholder="Enter the Team You Are Scouting">
+            </div>
+            <div class="form-group margins">
+                <label for="matchNumber">What Match is it?</label>
+                <input type="text" class="form-control" id="matchNumber" placeholder="Enter the Current Match">
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Autonomous panel: -->
+
+<div class="panel panel-default margins ">
+    <div class="panel-heading ">
+        <h3 class="panel-title ">Autonomous:</h3>
+    </div>
+    <div class="panel-body margins">
+        <form>
+            <div class="form-group">
+                <label>
+                    <button type="button" onclick="return getData()" class="btn btn-primary margins" (click)="autoCheck = !autoCheck"> Did the robot cross the Autonomous line?</button>
+                    <span *ngIf="autoCheck" class="glyphicon glyphicon-ok" style="color:green" aria-hidden="true"></span>
+                    <span *ngIf="!autoCheck" class="glyphicon glyphicon-remove" style="color:red" aria-hidden="true"></span>
+                </label>
+                <ul *ngIf="autoCheck">
+                    <li class="margins" for="autoScale">Did the robot put a cube on the alliance scale?
+                        <input type="checkbox"  id="autoScale">
+                    </li>
+                    <br>
+                    <li class="margins" for="autoSwitch">Did the robot put a cube on the alliance switch?
+                        <input type="checkbox" id="autoSwitch">
+                    </li>
+                    <br>
+                    <li class="margins" for="autoDefend">Did the robot put a cube on the enemy switch?
+                        <input type="checkbox" id="autoDefend">
+                    </li>
+                    <br>
+                    <li class="margins">How fast was the robot in Auto (1-5). Slowest = 1, Fastest = 5
+                        <select class="form-control">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Teleop Panel: -->
+<div class="panel panel-default margins ">
+    <div class="panel-heading ">
+        <h3 class="panel-title ">Teleop:</h3>
+    </div>
+    <div class="panel-body margins">
+        <div>
+            <p style="font-weight: bold" class="margins">Cubes placed on alliance scale:</p> 
+            <input type="number" id="allianceScore" class="form-control margins" placeholder="#">
+            <p style="font-weight: bold" class="margins" style="margin-top: 10px" >Cubes placed on alliance switch:</p> 
+            <input type="number" id="allianceScore" class="form-control margins" placeholder="#">
+            <p style="font-weight: bold" class="margins " style="margin-top: 10px">Cubes placed on enemy switch:</p> 
+            <input type="number" id="allianceScore" class="form-control margins"  placeholder="#">   
+            <div class="panel panel-default margins" style="margin-top: 15px">
+                <label class="margins">How well did this robot place cubes (1-5). Worst = 1, Perfect = 5
+                    <select class="form-control">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </label>
+            </div>
+            <div class="panel panel-default margins" style="margin-top: 15px">
+                <label class="margins" for="teleDefense">Did this robot play defense?
+                    <input type="checkbox" id="teleDefense">
+                </label>  
+            </div>
+            <div class="panel panel-default margins">
+                <label class="margins">How fast was the robot in teleop (1-5). Slowest = 1, Fastest = 5
+                    <select class="form-control">
+                     <option>1</option>
+                     <option>2</option>
+                     <option>3</option>
+                     <option>4</option>
+                     <option>5</option>
+                    </select>
+                </label>
+            </div>
+            <div>
+                <label>
+                    <button type="button" onclick="return getData()" class="btn btn-primary margins" (click)="teleCheck = !teleCheck"> Did the robot climb or help others climb?</button>
+                    <span *ngIf="teleCheck" class="glyphicon glyphicon-ok" style="color:green" aria-hidden="true"></span>
+                    <span *ngIf="!teleCheck" class="glyphicon glyphicon-remove" style="color:red" aria-hidden="true"></span>
+                </label>
+                <ul *ngIf="teleCheck">
+                    <li class="margins" for="helpClimb">Did the robot deploy a ramp?
+                        <input type="checkbox"  id="helpClimb">
+                    </li>
+                    <br>
+                    <li class="margins" for="rampClimb">Did the robot climb a ramp?
+                        <input type="checkbox" id="rampClimb">
+                    </li>
+                    <br>
+                    <li class="margins" for="barClimb">Did the robot climb the bar?
+                        <input type="checkbox" id="barClimb">
+                    </li>
+                    <li class="margins" style="margin-top: 15px" for="otherClimb">Other:
+                        <input type="text" id="otherClimb">
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Other Panel: -->
+<div class="panel panel-default margins ">
+    <div class="panel-heading ">
+        <h3 class="panel-title ">Other:</h3>
+    </div>
+    <div class="panel-body margins">
+        <p style="font-weight: bold" class="margins">Alliance Score:</p> 
+        <input type="number" id="allianceScore" class="form-control margins" placeholder="Score:">
+        <p style="font-weight: bold; margin-top: 10px" class="margins">Comments:</p> 
+        <textarea id="scouterComment" class="form-control margins" rows="3" placeholder="Enter Comments: Strategy, Failures, Human Players, Power Ups etc"></textarea>
+        <button type="button" class="btn btn-primary margins" style="margin-top: 10px" >Submit</button>
+    </div>
+</div>
