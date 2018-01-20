@@ -9,6 +9,8 @@ import { ScoutingFormComponent } from './components/scouting-form/scouting-form.
 import { PitFormComponent } from './components/pit-form/pit-form.component';
 import { HomeComponent } from './components/home/home.component';
 import { TeamComponent } from './components/team/team.component';
+import { TeamService } from './services/team.service';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -22,9 +24,12 @@ import { TeamComponent } from './components/team/team.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    TeamService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

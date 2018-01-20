@@ -1,1 +1,4 @@
-<p>Hello, World  {{id}}</p>
+<div class="container-fluid">
+    <h1 *ngIf="loading">Loading...</h1>
+    <h1>{{team?.teamInfo?.name}} {{team?.teamInfo?.teamNumber}}</h1>
+</div>

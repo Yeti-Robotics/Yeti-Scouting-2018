@@ -1,0 +1,7 @@
+{
+    "/php" : {
+        "target": "http://scouting.yetirobotics.org",
+        "secure": false,
+        "changeOrigin": true
+    }
+}
