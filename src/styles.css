@@ -1,15 +1,1 @@
 /* You can add global styles to this file, and also import other style files */
-
-.margins {
-    margin-right: 25px;
-    margin-left: 25px;
-}
-
-.main-nav{
-    border-bottom:2px solid rgb(0,0,0);
-    padding-bottom:10px
-}
-
-p {
-    font-weight: bold 
-}
