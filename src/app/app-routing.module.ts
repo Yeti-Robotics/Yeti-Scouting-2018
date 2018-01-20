@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ScoutingFormComponent } from './components/scouting-form/scouting-form.component';
 import { PitFormComponent } from './components/pit-form/pit-form.component';
 import { HomeComponent } from './components/home/home.component';
+import { TeamComponent } from './components/team/team.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,11 @@ const routes: Routes = [
     path: 'pit',
     pathMatch: 'full',
     component: PitFormComponent
+  },
+  {
+    path: 'team/:id',
+    pathMatch: 'full',
+    component: TeamComponent
   },
   {
     path: '',

@@ -8,6 +8,7 @@ import { HeaderBarComponent } from './components/header-bar/header-bar.component
 import { ScoutingFormComponent } from './components/scouting-form/scouting-form.component';
 import { PitFormComponent } from './components/pit-form/pit-form.component';
 import { HomeComponent } from './components/home/home.component';
+import { TeamComponent } from './components/team/team.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { HomeComponent } from './components/home/home.component';
     HeaderBarComponent,
     ScoutingFormComponent,
     PitFormComponent,
-    HomeComponent
+    HomeComponent,
+    TeamComponent
   ],
   imports: [
     BrowserModule,
