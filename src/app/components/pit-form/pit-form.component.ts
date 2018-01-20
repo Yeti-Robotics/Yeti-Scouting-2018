@@ -5,5 +5,7 @@ import { Component } from "@angular/core";
     styleUrls: ['./pit-form.component.less']
 })
 export class PitFormComponent {
-
+    onDrivetrainSelect(event: Event, drivetrainType) {
+        event.preventDefault();
+    }
 }
