@@ -1,14 +1,17 @@
 <div class="container-fluid">
-    <h4>Scouting as {{user.name}}</h4>
+    <h4 style="font-weight: bold">Scouting as {{user.name}}</h4>
     <form id="pitForm" enctype="multipart/form-data" ng-submit="submit()">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">Info</h3>
+                <h3 style="font-weight: bold" class="panel-title">Basic Info:</h3>
             </div>
             <div class="panel-body">
                 <label for="teamnumber">Team #</label>
                 <input ng-model="pitFormData.teamNumber" class="form-control" type='number' name='teamnumber' id='teamnumber' placeholder='Enter Team Number here'
                     required>
+                    <label for="teamname">Team Name</label>
+                    <input ng-model="pitFormData.teamName" class="form-control" type='name' name='teamname' id='teamname' placeholder='Enter Team Name here'
+                        required>
 
 
 
