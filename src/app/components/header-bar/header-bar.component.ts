@@ -1,3 +1,5 @@
+import { FormBuilder } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 import { Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
@@ -9,9 +11,11 @@ import { ActivatedRoute } from "@angular/router";
 export class HeaderBarComponent {
 
     id: number;
+    form: FormGroup;
 
-    constructor(private route: ActivatedRoute) {
+    constructor(private route: ActivatedRoute, private fb: FormBuilder) {
         this.id = this.route.snapshot.params['id'];
+        this.form = fb.group({});
     }
 
     teamRoute () {

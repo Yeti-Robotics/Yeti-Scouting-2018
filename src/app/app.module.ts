@@ -11,6 +11,7 @@ import { HomeComponent } from './components/home/home.component';
 import { TeamComponent } from './components/team/team.component';
 import { TeamService } from './services/team.service';
 import {HttpClientModule} from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {HttpClientModule} from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     TeamService

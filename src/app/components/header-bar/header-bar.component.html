@@ -22,7 +22,7 @@
                     <a routerLink="/pit" routerLinkActive="active-link">Pit Form</a>
                 </li>
                 <!--Try to get this to work-->
-                <form class="navbar-form navbar-left">
+                <form [formGroup]="form" class="navbar-form navbar-left">
                     <div class="form-group">
                         <input id="teamSearch" type="text" class="form-control" placeholder="Search by Team Number">
                     </div>

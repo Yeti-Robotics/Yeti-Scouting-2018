@@ -1,16 +1,16 @@
 <div class="container-fluid">
-    <h4 style="font-weight: bold">Scouting as {{user.name}}</h4>
-    <form id="pitForm" enctype="multipart/form-data" ng-submit="submit()">
+    <h4 style="font-weight: bold">Scouting as {{user?.name}}</h4>
+    <form [formGroup]="form" id="pitForm">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 style="font-weight: bold" class="panel-title">Basic Info:</h3>
             </div>
             <div class="panel-body">
                 <label for="teamnumber">Team #</label>
-                <input ng-model="pitFormData.teamNumber" class="form-control" type='number' name='teamnumber' id='teamnumber' placeholder='Enter Team Number here'
+                <input class="form-control" type='number' name='teamnumber' id='teamnumber' placeholder='Enter Team Number here'
                     required>
                     <label for="teamname">Team Name</label>
-                    <input ng-model="pitFormData.teamName" class="form-control" type='name' name='teamname' id='teamname' placeholder='Enter Team Name here'
+                    <input class="form-control" type='name' name='teamname' id='teamname' placeholder='Enter Team Name here'
                         required>
 
 
@@ -23,13 +23,13 @@
                         </button>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="#" (click)="onDrivetrainSelect($event, 'tank')">Tank drive</a>
+                                <a href="#">Tank drive</a>
                             </li>
                             <li>
-                                <a href="#" (click)="onDrivetrainSelect($event, 'mecanum')">Mecanum drive</a>
+                                <a href="#">Mecanum drive</a>
                             </li>
                             <li>
-                                <a href="#" (click)="onDrivetrainSelect($event, 'swerve')">Swerve drive</a>
+                                <a href="#">Swerve drive</a>
                             </li>
                         </ul>
                     </div>
@@ -48,17 +48,16 @@
             <legend>Upload Pictures here</legend>
             <div class="form-group">
                 <div class="form-group">
-                    <button class="btn btn-block" type="button" ng-click="addPicture()">Add Picture</button>
+                    <button class="btn btn-block" type="button">Add Picture</button>
                 </div>
-                <div ng-repeat="picture in picNum">
-                    <div picture onchange="angular.element(this).scope().updateDisplay(this.children[0].children[1].children[0], angular.element(this).scope().$index); angular.element(this).scope().unrequireComments()"
-                        remove-picture="removePicture(picture)"></div>
+                <div>
+                    <div></div>
                 </div>
             </div>
         </fieldset>
         <fieldset>
             <legend>Type Your comments here</legend>
-            <textarea ng-model="pitFormData.comment" class="form-control" id="comments" rows="3" cols="40" name='comments' placeholder='Enter comments about the team here'></textarea>
+            <textarea class="form-control" id="comments" rows="3" cols="40" name='comments' placeholder='Enter comments about the team here'></textarea>
             <br>
         </fieldset>
         <div class="form-group">
